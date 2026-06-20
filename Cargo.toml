@@ -1,0 +1,9 @@
+[package]
+name = "stock-trek-types"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rust_decimal = "1.42.1"
+serde = { version = "1.0.228", features = ["derive"] }
+strum = { version = "0.28.0", features = ["derive"] }
