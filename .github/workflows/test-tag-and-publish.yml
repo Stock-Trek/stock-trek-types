@@ -46,7 +46,7 @@ jobs:
           cargo clippy
           cargo test
 
-      # - name: Get version, check if tag exists, create and build docker image if not
+      # - name: Get version, check if tag exists, create if not
       #   run: |
       #     VERSION=$(cargo pkgid --package backend | rev | cut -d '@' -f 1 | cut -d '#' -f 1 | rev)
       #     TAG="v${VERSION}"
