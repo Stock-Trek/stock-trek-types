@@ -4,6 +4,6 @@ use std::hash::Hash;
 use strum::Display;
 
 #[derive(Debug, Display, Clone, Hash, Serialize, Deserialize)]
-pub enum OrderRequest<A, N> {
-    Single(SingleOrder<A, N>),
+pub enum OrderRequest<Asset, Number> {
+    Single(SingleOrder<Asset, Number>),
 }
