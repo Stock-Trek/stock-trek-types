@@ -4,12 +4,12 @@ use crate::cex::{
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, Hash, Serialize, Deserialize)]
-pub struct SingleOrder<A, N> {
-    pub base: A,
-    pub quote: A,
-    pub activation: Activation<N>,
-    pub pricing: Pricing<N>,
+pub struct SingleOrder<Asset, Number> {
+    pub base: Asset,
+    pub quote: Asset,
+    pub activation: Activation<Number>,
+    pub pricing: Pricing<Number>,
     pub side: Side,
-    pub quantity: Quantity<N>,
+    pub quantity: Quantity<Number>,
     pub tag: Tag,
 }

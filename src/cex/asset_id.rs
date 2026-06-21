@@ -2,7 +2,7 @@ use serde::{Deserialize, Serialize};
 use strum::Display;
 
 #[derive(Debug, Display, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
-pub enum AssetName {
+pub enum AssetId {
     Aave,
     Arbitrum,
     Atom,
