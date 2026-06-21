@@ -40,22 +40,33 @@ jobs:
       - name: Set up Rust
         uses: actions-rust-lang/setup-rust-toolchain@v1
 
+      - name: Set up shipyard authentication
+        env:
+          SHIPYARD_KNOWN_HOST: ${{ env.SHIPYARD_KNOWN_HOST }}
+          SHIPYARD_SSH_PRIVATE_KEY_STOCK_TREK_TYPES: ${{ env.SHIPYARD_SSH_PRIVATE_KEY_STOCK_TREK_TYPES }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ env.SHIPYARD_SSH_PRIVATE_KEY_STOCK_TREK_TYPES }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "${{ env.SHIPYARD_KNOWN_HOST }}" >> ~/.ssh/known_hosts
+          ssh -T git@ssh.shipyard.rs 2>&1
+
       - name: Run checks
         run: |
           cargo fmt --check
           cargo clippy
           cargo test
 
-      # - name: Get version, check if tag exists, create if not
-      #   run: |
-      #     VERSION=$(cargo pkgid --package backend | rev | cut -d '@' -f 1 | cut -d '#' -f 1 | rev)
-      #     TAG="v${VERSION}"
-      #     if git ls-remote --tags origin "refs/tags/${TAG}" | grep -q "refs/tags/${TAG}"; then
-      #       echo "Tag ${TAG} already exists"
-      #     else
-      #       echo "Creating tag ${TAG}"
-      #       git config user.name "github-actions[bot]"
-      #       git config user.email 'CreateTags[bot]@users.noreply.github.com'
-      #       git tag "${TAG}"
-      #       git push origin "${TAG}"
-      #     fi
+      - name: Get version, check if tag exists, create and publish if not
+        run: |
+          VERSION=$(cargo pkgid --package backend | rev | cut -d '@' -f 1 | cut -d '#' -f 1 | rev)
+          TAG="v${VERSION}"
+          if git ls-remote --tags origin "refs/tags/${TAG}" | grep -q "refs/tags/${TAG}"; then
+            echo "Tag ${TAG} already exists"
+          else
+            echo "Creating tag ${TAG}"
+            git config user.name "github-actions[bot]"
+            git config user.email 'CreateTags[bot]@users.noreply.github.com'
+            git tag "${TAG}"
+            git push origin "${TAG}"
+          fi
