@@ -4,6 +4,7 @@ use strum::Display;
 
 #[allow(non_camel_case_types)]
 #[derive(Debug, Display, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[non_exhaustive]
 pub enum CexId {
     Binance,
 }
