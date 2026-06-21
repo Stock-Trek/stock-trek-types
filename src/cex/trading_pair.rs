@@ -3,8 +3,8 @@ use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct TradingPair {
-    base: AssetId,
-    quote: AssetId,
+    pub base: AssetId,
+    pub quote: AssetId,
 }
 impl TradingPair {
     pub fn new(base: AssetId, quote: AssetId) -> Self {
