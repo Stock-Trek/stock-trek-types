@@ -2,6 +2,18 @@
 name = "stock-trek-types"
 version = "0.1.2"
 edition = "2024"
+description = "Types for use with stock-trek"
+authors = ["stock-trek.com <stock-trek@proton.me>"]
+license = "MIT"
+repository = "https://github.com/Stock-Trek/stock-trek-types"
+readme = "README.md"
+keywords = [
+  "algorithm",
+  "bot",
+  "crypto",
+  "quant",
+  "trading",
+]
 
 [dependencies]
 rust_decimal = "1.42.1"
