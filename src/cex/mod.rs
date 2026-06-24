@@ -5,6 +5,7 @@ pub mod cex_id;
 pub mod order_request;
 pub mod order_response;
 pub mod orders;
+pub mod preferences;
 pub mod price_basis;
 pub mod pricing;
 pub mod quantity;
