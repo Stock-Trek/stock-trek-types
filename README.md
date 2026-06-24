@@ -18,33 +18,33 @@ stock-trek-types = "0.1.2"
 
 ## Modules
 
-| Module | Description |
-|--------|-------------|
+| Module                                                                           | Description                                                             |
+|----------------------------------------------------------------------------------|-------------------------------------------------------------------------|
 | [`cex`](https://docs.rs/stock-trek-types/latest/stock_trek_types/cex/index.html) | Centralized exchange types — orders, pairs, pricing, activation, assets |
 
 ### `cex`
 
 The `cex` module contains the core domain types:
 
-| Type | Description |
-|------|-------------|
-| `AssetId` | Supported cryptocurrency assets (Bitcoin, Ethereum, Solana, etc.) |
-| `CexId` | Supported exchange identifiers (e.g., Binance) |
-| `Side` | Order side — `Buy` or `Sell` |
-| `Status` | Order status lifecycle — `New`, `Open`, `PartiallyFilled`, `Filled`, `Canceled`, `Rejected`, `Expired` |
-| `TimeInForce` | Time-in-force policies — `GoodTillCancelled`, `FillOrKill`, `ImmediateOrCancel` |
-| `TradingPair` | A base/quote trading pair (e.g., BTC/USDT) |
-| `Quantity<N>` | Order quantity expressed as either `OfBase` or `OfQuote` |
-| `Pricing<N>` | Pricing scheme — `Market` or `Limit` (with price and time-in-force) |
-| `Activation<N>` | Order activation condition — `Immediate`, `PriceTriggered`, or `Trailing` |
-| `PriceBasis` | Price reference for triggers — `Last`, `Mark`, `Index`, `BestBid`, `BestAsk` |
-| `TriggerDirection` | Trigger direction — `Above` or `Below` |
-| `TriggerMode` | Trigger mode — `Touch` or `Cross` |
-| `CexCapability` | Capabilities that a CEX may or may not support (e.g., `QuoteQuantityOnLimitOrders`) |
-| `Tag` | An opaque string tag for attaching metadata |
-| `OrderRequest<Asset, Number>` | A request to place an order (wraps `SingleOrder`) |
-| `OrderResponse` | A response from an order submission (currently wraps a `Tag`) |
-| `SingleOrder<Asset, Number>` | A single order with all parameters — base asset, quote asset, activation, pricing, side, quantity, and tag |
+| Type                          | Description                                                                                                |
+|-------------------------------|------------------------------------------------------------------------------------------------------------|
+| `AssetId`                     | Supported cryptocurrency assets (Bitcoin, Ethereum, Solana, etc.)                                          |
+| `CexId`                       | Supported exchange identifiers (e.g., Binance)                                                             |
+| `Side`                        | Order side — `Buy` or `Sell`                                                                               |
+| `Status`                      | Order status lifecycle — `New`, `Open`, `PartiallyFilled`, `Filled`, `Canceled`, `Rejected`, `Expired`     |
+| `TimeInForce`                 | Time-in-force policies — `GoodTillCancelled`, `FillOrKill`, `ImmediateOrCancel`                            |
+| `TradingPair`                 | A base/quote trading pair (e.g., BTC/USDT)                                                                 |
+| `Quantity<N>`                 | Order quantity expressed as either `OfBase` or `OfQuote`                                                   |
+| `Pricing<N>`                  | Pricing scheme — `Market` or `Limit` (with price and time-in-force)                                        |
+| `Activation<N>`               | Order activation condition — `Immediate`, `PriceTriggered`, or `Trailing`                                  |
+| `PriceBasis`                  | Price reference for triggers — `Last`, `Mark`, `Index`, `BestBid`, `BestAsk`                               |
+| `TriggerDirection`            | Trigger direction — `Above` or `Below`                                                                     |
+| `TriggerMode`                 | Trigger mode — `Touch` or `Cross`                                                                          |
+| `CexCapability`               | Capabilities that a CEX may or may not support (e.g., `QuoteQuantityOnLimitOrders`)                        |
+| `Tag`                         | An opaque string tag for attaching metadata                                                                |
+| `OrderRequest<Asset, Number>` | A request to place an order (wraps `SingleOrder`)                                                          |
+| `OrderResponse`               | A response from an order submission (currently wraps a `Tag`)                                              |
+| `SingleOrder<Asset, Number>`  | A single order with all parameters — base asset, quote asset, activation, pricing, side, quantity, and tag |
 
 ### Generics
 
@@ -87,4 +87,4 @@ let request = OrderRequest::Single(order);
 
 ## License
 
-See [LICENSE](LICENSE).
+MIT: See [LICENSE](LICENSE).
