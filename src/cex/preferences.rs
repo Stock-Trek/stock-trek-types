@@ -2,13 +2,13 @@ use crate::util::serde_rounding_strategy;
 use rust_decimal::RoundingStrategy;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub struct CexPreferences {
     pub max_network_delay_millis: u32,
     pub rounding: CexRoundingPreferences,
 }
 
-#[derive(Debug, Clone, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, Serialize, Deserialize)]
 pub struct CexRoundingPreferences {
     #[serde(with = "serde_rounding_strategy")]
     pub activation_price_triggered_above: RoundingStrategy,
