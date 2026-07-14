@@ -1,7 +1,7 @@
 use crate::cex::asset_id::AssetId;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
 pub struct TradingPair {
     pub base: AssetId,
     pub quote: AssetId,
