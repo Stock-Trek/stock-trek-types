@@ -1,3 +1,4 @@
+pub mod account_id;
 pub mod activation;
 pub mod asset_id;
 pub mod capability;
