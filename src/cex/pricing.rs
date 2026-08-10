@@ -1,9 +1,11 @@
 use crate::cex::time_in_force::TimeInForce;
 use rust_decimal::Decimal;
+#[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 use strum::Display;
 
-#[derive(Debug, Display, Clone, Copy, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Display, Clone, Copy, Hash)]
 pub enum Pricing<N> {
     Market,
     Limit {

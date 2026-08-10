@@ -16,6 +16,13 @@ Add the dependency to your `Cargo.toml`:
 stock-trek-types = "0.1.2"
 ```
 
+Serde support is optional and off by default. Enable the `serde` feature to get `Serialize`/`Deserialize` implementations for all types:
+
+```toml
+[dependencies]
+stock-trek-types = { version = "0.1.2", features = ["serde"] }
+```
+
 ## Modules
 
 | Module                                                                           | Description                                                             |
