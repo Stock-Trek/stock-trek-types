@@ -3,10 +3,10 @@ use serde::{Deserialize, Serialize};
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
-pub struct Tag(pub String);
+pub struct BotId(pub String);
 
-impl Tag {
-    pub fn new(tag: &str) -> Self {
-        Tag(tag.to_string())
+impl BotId {
+    pub fn new(bot_id: &str) -> Self {
+        BotId(bot_id.to_string())
     }
 }

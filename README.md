@@ -13,14 +13,14 @@ Add the dependency to your `Cargo.toml`:
 
 ```toml
 [dependencies]
-stock-trek-types = "0.1.2"
+stock-trek-types = "x.y.z"
 ```
 
 Serde support is optional and off by default. Enable the `serde` feature to get `Serialize`/`Deserialize` implementations for all types:
 
 ```toml
 [dependencies]
-stock-trek-types = { version = "0.1.2", features = ["serde"] }
+stock-trek-types = { version = "x.y.z", features = ["serde"] }
 ```
 
 ## Modules
