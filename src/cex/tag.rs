@@ -1,7 +1,9 @@
+#[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 use std::hash::Hash;
 
-#[derive(Debug, Clone, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct Tag(pub String);
 
 impl Tag {

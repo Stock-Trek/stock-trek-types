@@ -1,9 +1,11 @@
 use crate::cex::capability::CexCapability;
+#[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 use strum::Display;
 
 #[allow(non_camel_case_types)]
-#[derive(Debug, Display, Clone, Copy, PartialEq, Eq, Hash, Serialize, Deserialize)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Display, Clone, Copy, PartialEq, Eq, Hash)]
 #[non_exhaustive]
 pub enum CexId {
     Binance,
