@@ -18,7 +18,7 @@ pub enum Activation<N> {
     Trailing {
         activation_price: N,
         basis: PriceBasis,
-        callback_rate_bps: N,
+        callback_rate_bps: u32,
         direction: TriggerDirection,
     },
 }
