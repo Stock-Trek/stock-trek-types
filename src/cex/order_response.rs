@@ -1,4 +1,4 @@
-use crate::cex::{order_status::OrderStatus, tag::Tag};
+use crate::cex::order_status::OrderStatus;
 use rust_decimal::Decimal;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
@@ -11,5 +11,4 @@ pub struct OrderResponse {
     pub filled_quote_quantity: Decimal,
     pub order_id: String,
     pub status: OrderStatus,
-    pub tag: Tag,
 }
