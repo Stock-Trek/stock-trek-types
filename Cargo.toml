@@ -18,11 +18,11 @@ keywords = [
 [dependencies]
 rust_decimal = { version = "1.42.1", default-features = false, features = ["std"] }
 serde = { version = "1.0.228", features = ["derive"], optional = true }
-strum = { version = "0.28.0", features = ["derive"] }
+strum = { version = "0.28.0", features = ["derive"], optional = true }
 
 [features]
 default = []
-serde = ["dep:serde", "rust_decimal/serde"]
+serde = ["dep:serde", "dep:strum", "rust_decimal/serde"]
 
 [package.metadata.docs.rs]
 default-target = "x86_64-unknown-linux-gnu"

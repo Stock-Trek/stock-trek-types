@@ -3,10 +3,12 @@ use crate::cex::{
 };
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
+#[cfg(feature = "serde")]
 use strum::Display;
 
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[derive(Debug, Display, Clone, Hash)]
+#[cfg_attr(feature = "serde", derive(Display))]
+#[derive(Debug, Clone, Hash)]
 pub enum OrderRequest<Asset, Number> {
     Limit {
         base: Asset,
