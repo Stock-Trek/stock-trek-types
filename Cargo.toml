@@ -1,6 +1,6 @@
 [package]
 name = "stock-trek-types"
-version = "0.4.0"
+version = "0.4.1"
 edition = "2024"
 description = "Types for use with stock-trek"
 authors = ["stock-trek.com <stock-trek@proton.me>"]

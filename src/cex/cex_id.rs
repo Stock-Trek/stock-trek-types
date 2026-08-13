@@ -5,8 +5,7 @@ use serde::{Deserialize, Serialize};
 use strum::Display;
 
 #[allow(non_camel_case_types)]
-#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-#[cfg_attr(feature = "serde", derive(Display))]
+#[cfg_attr(feature = "serde", derive(Display, Serialize, Deserialize))]
 #[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 #[non_exhaustive]
 pub enum CexId {
