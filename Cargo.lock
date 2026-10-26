@@ -451,11 +451,12 @@ checksum = "0c790de23124f9ab44544d7ac05d60440adc586479ce501c1d6d7da3cd8c9cf5"
 
 [[package]]
 name = "stock-trek-types"
-version = "0.4.2"
+version = "0.4.3"
 dependencies = [
  "rust_decimal",
  "serde",
  "strum",
+ "strum_macros",
 ]
 
 [[package]]
@@ -463,9 +464,6 @@ name = "strum"
 version = "0.28.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9628de9b8791db39ceda2b119bbe13134770b56c138ec1d3af810d045c04f9bd"
-dependencies = [
- "strum_macros",
-]
 
 [[package]]
 name = "strum_macros"

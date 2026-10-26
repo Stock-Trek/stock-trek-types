@@ -16,7 +16,7 @@ Add the dependency to your `Cargo.toml`:
 stock-trek-types = "x.y.z"
 ```
 
-Serde support is optional and off by default. Enable the `serde` feature to get `Serialize`/`Deserialize` implementations for all types:
+Serde support is optional and off by default. Enable the `serde` feature to get `Serialize`/`Deserialize` implementations for all types, along with `Display`/`EnumString` implementations for the plain enums:
 
 ```toml
 [dependencies]
