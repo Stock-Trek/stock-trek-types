@@ -1,11 +1,9 @@
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
-#[cfg(feature = "serde")]
-use strum_macros::EnumString;
+use strum::Display;
 
-#[cfg_attr(feature = "serde", derive(EnumString, Serialize, Deserialize))]
-#[cfg_attr(feature = "serde", strum(serialize_all = "snake_case"))]
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Display, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum Status {
     New,
     Open,
