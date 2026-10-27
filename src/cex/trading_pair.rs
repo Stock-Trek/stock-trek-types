@@ -11,7 +11,7 @@ pub struct TradingPair {
 impl TradingPair {
     pub fn new(base: AssetId, quote: AssetId) -> Self {
         if base == quote {
-            panic!("Base {} cannot be the same as Quote {}", base, quote);
+            panic!("Base {:?} cannot be the same as Quote {:?}", base, quote);
         }
         Self { base, quote }
     }
