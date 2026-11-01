@@ -1,9 +1,9 @@
+use strum::{Display, EnumCount, EnumIter, EnumString};
+
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-use strum::{Display, EnumString};
-
-#[derive(Debug, Display, EnumString, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Display, EnumCount, EnumIter, EnumString, Clone, Copy, PartialEq, Eq, Hash)]
 #[strum(serialize_all = "snake_case")]
 #[cfg_attr(
     feature = "serde",
