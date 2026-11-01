@@ -1,13 +1,15 @@
 #[cfg(feature = "serde")]
-use {
-    serde::{Deserialize, Serialize},
-    strum::Display,
-    strum_macros::EnumString,
-};
+use serde::{Deserialize, Serialize};
 
-#[cfg_attr(feature = "serde", derive(Display, EnumString, Serialize, Deserialize))]
-#[cfg_attr(feature = "serde", strum(serialize_all = "snake_case"))]
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+use strum::{Display, EnumString};
+
+#[derive(Debug, Display, EnumString, Clone, Copy, PartialEq, Eq, Hash)]
+#[strum(serialize_all = "snake_case")]
+#[cfg_attr(
+    feature = "serde",
+    derive(Serialize, Deserialize),
+    serde(rename_all = "snake_case")
+)]
 pub enum TriggerDirection {
     Above,
     Below,

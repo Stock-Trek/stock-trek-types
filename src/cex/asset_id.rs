@@ -1,16 +1,15 @@
 #[cfg(feature = "serde")]
-use {
-    serde::{Deserialize, Serialize},
-    strum::Display,
-    strum_macros::{EnumCount, EnumString},
-};
+use serde::{Deserialize, Serialize};
 
+use strum::{Display, EnumString};
+
+#[derive(Debug, Display, EnumString, Clone, Copy, PartialEq, Eq, Hash)]
+#[strum(serialize_all = "snake_case")]
 #[cfg_attr(
     feature = "serde",
-    derive(Display, EnumCount, EnumString, Serialize, Deserialize)
+    derive(Serialize, Deserialize),
+    serde(rename_all = "snake_case")
 )]
-#[cfg_attr(feature = "serde", strum(serialize_all = "snake_case"))]
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 #[non_exhaustive]
 pub enum AssetId {
     Aave,
