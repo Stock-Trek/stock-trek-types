@@ -4,7 +4,20 @@ use strum::{Display, EnumCount, EnumIter, EnumString};
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Display, EnumCount, EnumIter, EnumString, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(
+    Debug,
+    Display,
+    EnumCount,
+    EnumIter,
+    EnumString,
+    Clone,
+    Copy,
+    PartialOrd,
+    Ord,
+    PartialEq,
+    Eq,
+    Hash,
+)]
 #[strum(serialize_all = "snake_case")]
 #[cfg_attr(
     feature = "serde",
