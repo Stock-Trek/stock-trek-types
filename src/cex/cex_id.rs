@@ -18,12 +18,7 @@ use serde::{Deserialize, Serialize};
     Eq,
     Hash,
 )]
-#[strum(serialize_all = "snake_case")]
-#[cfg_attr(
-    feature = "serde",
-    derive(Serialize, Deserialize),
-    serde(rename_all = "snake_case")
-)]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[non_exhaustive]
 pub enum CexId {
     Binance,
